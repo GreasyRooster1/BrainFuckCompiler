@@ -1,7 +1,6 @@
 package Parse;
 
-import Parse.Commands.PntCommand;
-import Parse.Commands.SetCommand;
+import Parse.Commands.*;
 
 import static Utils.Utils.append;
 
@@ -12,6 +11,7 @@ public class Parser {
     public Parser setup(){
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SetCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new PntCommand());
+        assemblyCommands = (AsmCommand[]) append(assemblyCommands,new InpCommand());
         return this;
     }
     public void load(String[] _lines) {
