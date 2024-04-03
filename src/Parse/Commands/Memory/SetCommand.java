@@ -1,4 +1,4 @@
-package Parse.Commands;
+package Parse.Commands.Memory;
 
 
 import Parse.AsmCommand;

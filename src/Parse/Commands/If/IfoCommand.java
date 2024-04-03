@@ -1,11 +1,11 @@
-package Parse.Commands;
+package Parse.Commands.If;
 
 import Parse.AsmCommand;
 import Parse.AsmCommons;
 
-public class IfcCommand extends AsmCommand{
-    public IfcCommand(){
-        identifier = "ifc";
+public class IfoCommand extends AsmCommand {
+    public IfoCommand(){
+        identifier = "ifo";
     }
 
     @Override
@@ -14,16 +14,14 @@ public class IfcCommand extends AsmCommand{
 
         int address = Integer.decode(sectors[1]);
 
-        //make sure pointer will reset correctly
+        //move pointer to address
         out.append(AsmCommons.movePointer(address));
 
-        //close loop block
-        out.append("]");
-
-        //reset pointer
+        //open loop, this will skip the whole execution block if the address is 0
+        out.append("[");
         out.append(AsmCommons.resetPointer(address));
 
-
+        //we dont close the [] block because the ifc command closes it
         return out.toString();
     }
 }

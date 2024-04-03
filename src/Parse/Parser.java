@@ -1,6 +1,10 @@
 package Parse;
 
-import Parse.Commands.*;
+import Parse.Commands.IO.InpCommand;
+import Parse.Commands.IO.PntCommand;
+import Parse.Commands.If.IfcCommand;
+import Parse.Commands.If.IfoCommand;
+import Parse.Commands.Memory.SetCommand;
 
 import static Utils.Utils.append;
 

@@ -1,11 +1,11 @@
-package Parse.Commands;
+package Parse.Commands.IO;
 
 import Parse.AsmCommand;
 import Parse.AsmCommons;
 
-public class PntCommand extends AsmCommand {
-    public PntCommand(){
-        identifier = "pnt";
+public class InpCommand extends AsmCommand {
+    public InpCommand(){
+        identifier = "inp";
     }
 
     @Override
@@ -19,9 +19,9 @@ public class PntCommand extends AsmCommand {
         //move pointer to address
         out.append(AsmCommons.movePointer(address));
 
-        //print value
-        for (int i = 0; i < value; i++) {
-            out.append(".>");
+        //write input to address
+        for(int i=0;i<value;i++) {
+            out.append(",>");
         }
 
         //reset pointer
