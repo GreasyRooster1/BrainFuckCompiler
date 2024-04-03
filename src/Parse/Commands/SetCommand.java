@@ -1,8 +1,9 @@
-package Parse;
+package Parse.Commands;
 
 
+import Parse.AsmCommand;
 
-public class SetCommand extends AsmCommand{
+public class SetCommand extends AsmCommand {
     SetCommand(){
         identifier = "set";
     }
