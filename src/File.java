@@ -1,14 +1,19 @@
-import java.io.File;
+import Utils.Utils;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class LoadFile {
-    public static String loadFile(String path){
-        String out = "";
+import static Utils.Utils.append;
+
+public class File {
+    public static String[] loadFile(String path){
+        String[] out = new String[0];
         try {
-            File file = new File(path);
+            java.io.File file = new java.io.File(path);
             Scanner reader = new Scanner(file);
-            out= reader.toString();
+            while (reader.hasNextLine()) {
+                out = append(out,reader.nextLine());
+            }
             reader.close();
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
@@ -17,4 +22,6 @@ public class LoadFile {
         }
         return out;
     }
+
+
 }
