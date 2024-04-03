@@ -7,40 +7,36 @@ import static Utils.Utils.append;
 
 public class Parser {
     public String[] lines;
-    public boolean includeDocs = false;
-    public int[] pointers = {};
+    public AsmCommand[] assemblyCommands = {};
 
+    public Parser setup(){
+        assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SetCommand());
+        return this;
+    }
     public void load(String[] _lines) {
         lines=_lines;
     }
     public String parse(){
         String[] parsedComments = parseComments(lines);
-        String[] parsedVariables = parseVariables(parsedComments);
-        return String.join(" ",parsedVariables);
+        String[] parsedAsm = parseAsmCommands(parsedComments);
+
+        return String.join(" ",parsedAsm);
     }
 
-    public static String[] parseVariables(String[] programLines){
-        String[] variableLines={};
-        int[] variableLineIndex={};
-
-        int i=0;
-        for (String line: programLines) {
-            if(line.startsWith("var")) {
-                append(variableLines, line);
-                append(variableLineIndex,i);
+    public String[] parseAsmCommands(String[] programLines){
+        String[] out = new String[0];
+        for (String line:programLines) {
+            String[] sectors = line.split(" ");
+            for (AsmCommand command:assemblyCommands) {
+                if(sectors[0].equals(command.identifier)){
+                    out = append(out,command.parse(sectors));
+                }
             }
-            i++;
         }
-
-        for (int j=0;j<variableLines.length;j++) {
-            String line = variableLines[j];
-            int index = variableLineIndex[j];
-
-
-        }
-        return programLines;
+        return out;
     }
-    public static String[] parseComments(String[] programLines) {
+
+    public String[] parseComments(String[] programLines) {
         String[] out = new String[0];
         for (String line: programLines) {
             if(!line.startsWith("//") || line.startsWith("///")){

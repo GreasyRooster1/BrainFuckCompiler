@@ -1,0 +1,12 @@
+//this is a comment
+///this is a docs comment
+
+//this should set the first position in the brainfuck stack to 16
+set 0x0001 72
+set 0x0002 69
+set 0x0003 76
+set 0x0004 76
+set 0x0005 79
+set 0x0006 33
+
+pnt 0x0001 6

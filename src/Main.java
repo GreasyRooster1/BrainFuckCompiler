@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        String[] programLines = File.loadFile("program.ebf");
+        String[] programLines = File.loadFile("program.basm");
 
-        Parser parser = new Parser();
+        Parser parser = new Parser().setup();
 
         parser.load(programLines);
 
