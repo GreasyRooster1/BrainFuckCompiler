@@ -1,2 +1,5 @@
 //test comments
+//these will be removed in the final program
+///this is a docs comment
+///these will be added to the program
 var x
