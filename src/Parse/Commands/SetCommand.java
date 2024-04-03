@@ -4,7 +4,7 @@ package Parse.Commands;
 import Parse.AsmCommand;
 
 public class SetCommand extends AsmCommand {
-    SetCommand(){
+    public SetCommand(){
         identifier = "set";
     }
 
@@ -17,9 +17,7 @@ public class SetCommand extends AsmCommand {
         int value = Integer.decode(sectors[2]);
 
         //move the pointer to the specified address
-        for (int i = 0; i < hexAddress; i++) {
-            out.append(">");
-        }
+
 
         //set address to 0
         out.append("[-]");

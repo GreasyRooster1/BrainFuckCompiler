@@ -3,7 +3,7 @@ package Parse.Commands;
 import Parse.AsmCommand;
 
 public class PntCommand extends AsmCommand {
-    PntCommand(){
+    public PntCommand(){
         identifier = "set";
     }
 
