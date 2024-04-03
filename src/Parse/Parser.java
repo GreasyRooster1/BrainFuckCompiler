@@ -12,6 +12,8 @@ public class Parser {
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SetCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new PntCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new InpCommand());
+        assemblyCommands = (AsmCommand[]) append(assemblyCommands,new IfoCommand());
+        assemblyCommands = (AsmCommand[]) append(assemblyCommands,new IfcCommand());
         return this;
     }
     public void load(String[] _lines) {

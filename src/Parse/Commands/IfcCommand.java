@@ -10,8 +10,17 @@ public class IfcCommand extends AsmCommand{
 
     @Override
     public String parse(String[] sectors) {
+        StringBuilder out = new StringBuilder();
+
+        int address = Integer.decode(sectors[1]);
 
         //close loop block
-        return "]";
+        out.append("]");
+
+        //reset pointer
+        out.append(AsmCommons.resetPointer(address));
+
+
+        return out.toString();
     }
 }

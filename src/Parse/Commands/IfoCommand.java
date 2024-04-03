@@ -19,6 +19,7 @@ public class IfoCommand extends AsmCommand {
 
         //open loop, this will skip the whole execution block if the address is 0
         out.append("[");
+        out.append(AsmCommons.resetPointer(address));
 
         //we dont close the [] block because the ifc command closes it
         return out.toString();

@@ -26,4 +26,4 @@ ifo 0x0007
     set 0x0005 33
 
     pnt 0x0001 5
-ifc
+ifc 0x0007
