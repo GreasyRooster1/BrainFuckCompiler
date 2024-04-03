@@ -20,4 +20,12 @@ public class AsmCommons {
     public static String clearValue(){
         return "[-]";
     }
+
+    public static String writeVal(int value) {
+        StringBuilder out = new StringBuilder();
+        for (int i = 0; i < value; i++) {
+            out.append("+");
+        }
+        return out.toString();
+    }
 }

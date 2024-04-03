@@ -2,6 +2,7 @@ package Parse.Commands;
 
 
 import Parse.AsmCommand;
+import Parse.AsmCommons;
 
 public class SetCommand extends AsmCommand {
     public SetCommand(){
@@ -17,20 +18,16 @@ public class SetCommand extends AsmCommand {
         int value = Integer.decode(sectors[2]);
 
         //move the pointer to the specified address
-
+        out.append(AsmCommons.movePointer(hexAddress));
 
         //set address to 0
-        out.append("[-]");
+        out.append(AsmCommons.clearValue());
 
         //set address to the specified value
-        for (int i = 0; i < value; i++) {
-            out.append("+");
-        }
+        out.append(AsmCommons.writeVal(value));
 
         //move the pointer back to 0x0000
-        for (int i = 0; i < hexAddress; i++) {
-            out.append("<");
-        }
+        out.append(AsmCommons.resetPointer(hexAddress));
 
         return out.toString();
     }
