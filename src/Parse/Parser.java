@@ -30,7 +30,9 @@ public class Parser {
             String[] sectors = line.split(" ");
             for (AsmCommand command:assemblyCommands) {
                 if(sectors[0].equals(command.identifier)){
-                    out = append(out,command.parse(sectors));
+                    String parsed = command.parse(sectors);
+                    //System.out.println(parsed);
+                    out = append(out,parsed);
                 }
             }
         }
