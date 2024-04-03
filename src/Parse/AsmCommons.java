@@ -28,4 +28,15 @@ public class AsmCommons {
         }
         return out.toString();
     }
+    public static String addVal(int value) {
+        return writeVal(value);
+    }
+
+    public static String subVal(int value) {
+        StringBuilder out = new StringBuilder();
+        for (int i = 0; i < value; i++) {
+            out.append("-");
+        }
+        return out.toString();
+    }
 }
