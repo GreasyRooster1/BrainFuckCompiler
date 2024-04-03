@@ -10,13 +10,13 @@ set 0x0006 33
 
 pnt 0x0001 6
 
-inp 0x0006
+inp 0x0007 5
 
-pnt 0x0001 6
+pnt 0x0007 6
 
-inp 0x0007
+inp 0x0007 1
 
-//checks if address is non-zero
+//checks if input is D
 
 ifo 0x0007
     set 0x0001 71

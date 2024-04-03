@@ -14,15 +14,18 @@ public class InpCommand extends AsmCommand {
 
         //decode the inputted sectors
         int address = Integer.decode(sectors[1]);
+        int value = Integer.decode(sectors[2]);
 
         //move pointer to address
         out.append(AsmCommons.movePointer(address));
 
         //write input to address
-        out.append(",");
+        for(int i=0;i<value;i++) {
+            out.append(",>");
+        }
 
         //reset pointer
-        out.append(AsmCommons.resetPointer(address));
+        out.append(AsmCommons.resetPointer(address+value));
 
         return out.toString();
     }
