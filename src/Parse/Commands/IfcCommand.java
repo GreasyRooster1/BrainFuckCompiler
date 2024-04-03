@@ -14,6 +14,9 @@ public class IfcCommand extends AsmCommand{
 
         int address = Integer.decode(sectors[1]);
 
+        //make sure pointer will reset correctly
+        out.append(AsmCommons.movePointer(address));
+
         //close loop block
         out.append("]");
 
