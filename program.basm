@@ -13,3 +13,18 @@ pnt 0x0001 6
 inp 0x0006
 
 pnt 0x0001 6
+
+inp 0x0007
+
+
+
+//checks if address is equal to a value
+ifo 0x0007 5
+    set 0x0001 71
+    set 0x0002 79
+    set 0x0003 79
+    set 0x0004 68
+    set 0x0005 33
+
+    pnt 0x0001 5
+ifc

@@ -27,7 +27,11 @@ public class Parser {
     public String[] parseAsmCommands(String[] programLines){
         String[] out = new String[0];
         for (String line:programLines) {
-            String[] sectors = line.split(" ");
+            String[] sectors = line
+                    .strip()
+                    .replace(" ","~")
+                    .replaceAll("\\s+","")
+                    .split("~");
             for (AsmCommand command:assemblyCommands) {
                 if(sectors[0].equals(command.identifier)){
                     String parsed = command.parse(sectors);
