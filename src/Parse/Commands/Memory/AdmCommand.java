@@ -61,23 +61,8 @@ public class AdmCommand extends AsmCommand {
         //move the pointer to 0x0000
         out.append(AsmCommons.resetPointer(address2));
 
-        //open loop that sets address 2 back to its original value
-        out.append("[");
-
-        //move the pointer to address 2
-        out.append(AsmCommons.movePointer(address2));
-
-        //increment address 2
-        out.append("+");
-
-        //move to 0x0000
-        out.append(AsmCommons.resetPointer(address2));
-
-        //decrement 0x0000
-        out.append("-");
-
-        //close loop when 0x0000 is 0
-        out.append("]");
+        //move data from 0x0000 back to address 2
+        out.append(AsmCommons.moveValue(0,address2));
 
         return out.toString();
     }
