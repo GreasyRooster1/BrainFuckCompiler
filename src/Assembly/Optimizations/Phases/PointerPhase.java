@@ -18,7 +18,7 @@ public class PointerPhase extends OptimizingPhase {
         while (!canStop) {
             canStop = true;
             for (int i = 1; i < chars.length - 1; i++) {
-                if (chars[i] == '>' && chars[i - 1] == '<') {
+                if (chars[i] == '>' && chars[i - 1] == '<' || chars[i] == '<' && chars[i - 1] == '>') {
                     chars[i]='@';
                     chars[i-1]='@';
                     canStop=false;
