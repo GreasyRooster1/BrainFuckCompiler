@@ -1,6 +1,7 @@
 package Assembly.Optimizations;
 
 import Assembly.Optimizations.Phases.PointerPhase;
+import Assembly.Optimizations.Phases.WhitespacePhase;
 
 import static Utils.Utils.append;
 
@@ -11,7 +12,9 @@ public class Optimizer {
 
     public OptimizingPhase[] optimizations = {};
     public Optimizer setup(){
+        optimizations = (OptimizingPhase[]) append(optimizations,new WhitespacePhase());
         optimizations = (OptimizingPhase[]) append(optimizations,new PointerPhase());
+
         return this;
     }
 
