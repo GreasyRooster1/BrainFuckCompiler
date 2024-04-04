@@ -15,7 +15,7 @@ public class Parser {
     public AsmCommand[] assemblyCommands = {};
 
     public Parser setup(){
-        //TODO: ADR SBR DBG NOP MOV CPY
+        //TODO: DBG NOP MOV CPY
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SetCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new PntCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new InpCommand());
@@ -27,6 +27,7 @@ public class Parser {
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SubCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new AdmCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SbmCommand());
+        assemblyCommands = (AsmCommand[]) append(assemblyCommands,new MovCommand());
         return this;
     }
     public void load(String[] _lines) {
