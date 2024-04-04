@@ -6,10 +6,7 @@ import Parse.Commands.IO.InpCommand;
 import Parse.Commands.IO.PntCommand;
 import Parse.Commands.ControlFlow.IfcCommand;
 import Parse.Commands.ControlFlow.IfoCommand;
-import Parse.Commands.Memory.AddCommand;
-import Parse.Commands.Memory.AdmCommand;
-import Parse.Commands.Memory.SetCommand;
-import Parse.Commands.Memory.SubCommand;
+import Parse.Commands.Memory.*;
 
 import static Utils.Utils.append;
 
@@ -29,6 +26,7 @@ public class Parser {
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new AddCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SubCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new AdmCommand());
+        assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SbmCommand());
         return this;
     }
     public void load(String[] _lines) {
