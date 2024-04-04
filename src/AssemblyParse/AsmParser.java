@@ -1,18 +1,18 @@
-package Parse;
+package AssemblyParse;
 
-import Parse.Commands.ControlFlow.*;
-import Parse.Commands.IO.DbgCommand;
-import Parse.Commands.IO.InpCommand;
-import Parse.Commands.IO.PntCommand;
-import Parse.Commands.Memory.*;
+import AssemblyParse.Commands.ControlFlow.*;
+import AssemblyParse.Commands.IO.DbgCommand;
+import AssemblyParse.Commands.IO.InpCommand;
+import AssemblyParse.Commands.IO.PntCommand;
+import AssemblyParse.Commands.Memory.*;
 
 import static Utils.Utils.append;
 
-public class Parser {
+public class AsmParser {
     public String[] lines;
     public AsmCommand[] assemblyCommands = {};
 
-    public Parser setup(){
+    public AsmParser setup(){
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SetCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new PntCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new InpCommand());

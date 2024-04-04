@@ -1,11 +1,11 @@
-package Parse.Commands.ControlFlow;
+package AssemblyParse.Commands.ControlFlow;
 
-import Parse.AsmCommand;
-import Parse.AsmCommons;
+import AssemblyParse.AsmCommand;
+import AssemblyParse.AsmCommons;
 
-public class JptCommand extends AsmCommand {
-    public JptCommand(){
-        identifier = "jpt";
+public class JmpCommand extends AsmCommand {
+    public JmpCommand(){
+        identifier = "jmp";
     }
 
     @Override
@@ -14,13 +14,12 @@ public class JptCommand extends AsmCommand {
 
         int address = Integer.decode(sectors[1]);
 
-        //go to address
+        //move pointer to address
         out.append(AsmCommons.movePointer(address));
 
-        //open loop
-        out.append("[");
+        //close loop and exit if address is 0
+        out.append("]");
 
-        //reset back to 0x0000
         out.append(AsmCommons.resetPointer(address));
 
         return out.toString();

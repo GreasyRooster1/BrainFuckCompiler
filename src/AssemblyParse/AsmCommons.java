@@ -1,4 +1,4 @@
-package Parse;
+package AssemblyParse;
 
 public class AsmCommons {
     public static String movePointer(int address){

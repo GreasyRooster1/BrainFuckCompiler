@@ -1,8 +1,8 @@
-package Parse.Commands.Memory;
+package AssemblyParse.Commands.Memory;
 
 
-import Parse.AsmCommand;
-import Parse.AsmCommons;
+import AssemblyParse.AsmCommand;
+import AssemblyParse.AsmCommons;
 
 public class SetCommand extends AsmCommand {
     public SetCommand(){

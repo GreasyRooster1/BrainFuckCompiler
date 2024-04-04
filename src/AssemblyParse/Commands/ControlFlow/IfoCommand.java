@@ -1,7 +1,7 @@
-package Parse.Commands.ControlFlow;
+package AssemblyParse.Commands.ControlFlow;
 
-import Parse.AsmCommand;
-import Parse.AsmCommons;
+import AssemblyParse.AsmCommand;
+import AssemblyParse.AsmCommons;
 
 public class IfoCommand extends AsmCommand {
     public IfoCommand(){

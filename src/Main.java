@@ -1,15 +1,13 @@
-import Parse.Parser;
-
-import java.util.Arrays;
+import AssemblyParse.AsmParser;
 
 public class Main {
     public static void main(String[] args) {
         String[] programLines = File.loadFile("program.basm");
 
-        Parser parser = new Parser().setup();
+        AsmParser asmParser = new AsmParser().setup();
 
-        parser.load(programLines);
+        asmParser.load(programLines);
 
-        System.out.println(parser.parse());
+        System.out.println(asmParser.parse());
     }
 }

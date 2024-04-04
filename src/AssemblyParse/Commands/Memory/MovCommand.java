@@ -1,7 +1,7 @@
-package Parse.Commands.Memory;
+package AssemblyParse.Commands.Memory;
 
-import Parse.AsmCommand;
-import Parse.AsmCommons;
+import AssemblyParse.AsmCommand;
+import AssemblyParse.AsmCommons;
 
 public class MovCommand extends AsmCommand {
     public MovCommand(){

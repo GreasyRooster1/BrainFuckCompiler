@@ -1,7 +1,7 @@
-package Parse.Commands.IO;
+package AssemblyParse.Commands.IO;
 
-import Parse.AsmCommand;
-import Parse.AsmCommons;
+import AssemblyParse.AsmCommand;
+import AssemblyParse.AsmCommons;
 
 public class InpCommand extends AsmCommand {
     public InpCommand(){
