@@ -2,6 +2,7 @@ package Parse;
 
 import Parse.Commands.ControlFlow.JmpCommand;
 import Parse.Commands.ControlFlow.JptCommand;
+import Parse.Commands.IO.DbgCommand;
 import Parse.Commands.IO.InpCommand;
 import Parse.Commands.IO.PntCommand;
 import Parse.Commands.ControlFlow.IfcCommand;
@@ -15,7 +16,7 @@ public class Parser {
     public AsmCommand[] assemblyCommands = {};
 
     public Parser setup(){
-        //TODO: DBG NOP MOV CPY
+        //TODO: NOP CPY
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SetCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new PntCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new InpCommand());
@@ -28,6 +29,7 @@ public class Parser {
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new AdmCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SbmCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new MovCommand());
+        assemblyCommands = (AsmCommand[]) append(assemblyCommands,new DbgCommand());
         return this;
     }
     public void load(String[] _lines) {
