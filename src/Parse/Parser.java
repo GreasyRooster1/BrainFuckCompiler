@@ -1,5 +1,7 @@
 package Parse;
 
+import Parse.Commands.ControlFlow.JmpCommand;
+import Parse.Commands.ControlFlow.JptCommand;
 import Parse.Commands.IO.InpCommand;
 import Parse.Commands.IO.PntCommand;
 import Parse.Commands.ControlFlow.IfcCommand;
@@ -19,6 +21,8 @@ public class Parser {
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new InpCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new IfoCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new IfcCommand());
+        assemblyCommands = (AsmCommand[]) append(assemblyCommands,new JptCommand());
+        assemblyCommands = (AsmCommand[]) append(assemblyCommands,new JmpCommand());
         return this;
     }
     public void load(String[] _lines) {
