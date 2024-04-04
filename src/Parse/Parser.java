@@ -28,6 +28,7 @@ public class Parser {
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new DbgCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new NopCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new CpyCommand());
+        assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SwpCommand());
         return this;
     }
     public void load(String[] _lines) {
