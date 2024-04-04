@@ -13,7 +13,7 @@ public class Parser {
     public AsmCommand[] assemblyCommands = {};
 
     public Parser setup(){
-        //TODO: CPY
+        //TODO:
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SetCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new PntCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new InpCommand());
@@ -28,6 +28,7 @@ public class Parser {
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new MovCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new DbgCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new NopCommand());
+        assemblyCommands = (AsmCommand[]) append(assemblyCommands,new CpyCommand());
         return this;
     }
     public void load(String[] _lines) {
