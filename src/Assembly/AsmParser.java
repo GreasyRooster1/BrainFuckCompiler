@@ -5,12 +5,14 @@ import Assembly.Commands.IO.DbgCommand;
 import Assembly.Commands.IO.InpCommand;
 import Assembly.Commands.IO.PntCommand;
 import Assembly.Commands.Memory.*;
+import Assembly.Optimizations.Optimizer;
 
 import static Utils.Utils.append;
 
 public class AsmParser {
     public String[] lines;
     public AsmCommand[] assemblyCommands = {};
+    public Optimizer optimizer;
 
     public AsmParser setup(){
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SetCommand());
@@ -29,6 +31,8 @@ public class AsmParser {
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new NopCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new CpyCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SwpCommand());
+
+        optimizer = new Optimizer();
         return this;
     }
     public void load(String[] _lines) {
@@ -38,7 +42,11 @@ public class AsmParser {
         String[] parsedComments = parseComments(lines);
         String[] parsedAsm = parseAsmCommands(parsedComments);
 
-        return String.join(" ",parsedAsm);
+        String rawParsed = String.join(" ",parsedAsm);
+
+        String optimized = optimizer.optimize(rawParsed);
+
+        return optimized;
     }
 
     public String[] parseAsmCommands(String[] programLines){
