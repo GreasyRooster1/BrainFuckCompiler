@@ -2,8 +2,8 @@ package Parse;
 
 import Parse.Commands.IO.InpCommand;
 import Parse.Commands.IO.PntCommand;
-import Parse.Commands.If.IfcCommand;
-import Parse.Commands.If.IfoCommand;
+import Parse.Commands.ControlFlow.IfcCommand;
+import Parse.Commands.ControlFlow.IfoCommand;
 import Parse.Commands.Memory.SetCommand;
 
 import static Utils.Utils.append;
@@ -13,6 +13,7 @@ public class Parser {
     public AsmCommand[] assemblyCommands = {};
 
     public Parser setup(){
+        //TODO: ADD SUB ADR SBR JPT JMP DBG NOP
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SetCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new PntCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new InpCommand());

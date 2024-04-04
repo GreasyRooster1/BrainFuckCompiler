@@ -36,3 +36,8 @@ set 0x0005 79
 set 0x0006 33
 
 pnt 0x0001 6
+
+jpt
+
+
+jmp
