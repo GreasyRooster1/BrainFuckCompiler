@@ -1,10 +1,10 @@
-package AssemblyParse;
+package Assembly;
 
-import AssemblyParse.Commands.ControlFlow.*;
-import AssemblyParse.Commands.IO.DbgCommand;
-import AssemblyParse.Commands.IO.InpCommand;
-import AssemblyParse.Commands.IO.PntCommand;
-import AssemblyParse.Commands.Memory.*;
+import Assembly.Commands.ControlFlow.*;
+import Assembly.Commands.IO.DbgCommand;
+import Assembly.Commands.IO.InpCommand;
+import Assembly.Commands.IO.PntCommand;
+import Assembly.Commands.Memory.*;
 
 import static Utils.Utils.append;
 

@@ -1,11 +1,11 @@
-package AssemblyParse.Commands.ControlFlow;
+package Assembly.Commands.ControlFlow;
 
-import AssemblyParse.AsmCommand;
-import AssemblyParse.AsmCommons;
+import Assembly.AsmCommand;
+import Assembly.AsmCommons;
 
-public class JmpCommand extends AsmCommand {
-    public JmpCommand(){
-        identifier = "jmp";
+public class IfcCommand extends AsmCommand{
+    public IfcCommand(){
+        identifier = "ifc";
     }
 
     @Override
@@ -14,13 +14,15 @@ public class JmpCommand extends AsmCommand {
 
         int address = Integer.decode(sectors[1]);
 
-        //move pointer to address
+        //make sure pointer will reset correctly
         out.append(AsmCommons.movePointer(address));
 
-        //close loop and exit if address is 0
+        //close loop block
         out.append("]");
 
+        //reset pointer
         out.append(AsmCommons.resetPointer(address));
+
 
         return out.toString();
     }

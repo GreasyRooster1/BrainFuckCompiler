@@ -1,7 +1,7 @@
-package AssemblyParse.Commands.ControlFlow;
+package Assembly.Commands.ControlFlow;
 
-import AssemblyParse.AsmCommand;
-import AssemblyParse.AsmCommons;
+import Assembly.AsmCommand;
+import Assembly.AsmCommons;
 
 public class JptCommand extends AsmCommand {
     public JptCommand(){

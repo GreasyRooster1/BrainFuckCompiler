@@ -1,7 +1,7 @@
-package AssemblyParse.Commands.IO;
+package Assembly.Commands.IO;
 
-import AssemblyParse.AsmCommand;
-import AssemblyParse.AsmCommons;
+import Assembly.AsmCommand;
+import Assembly.AsmCommons;
 
 public class PntCommand extends AsmCommand {
     public PntCommand(){

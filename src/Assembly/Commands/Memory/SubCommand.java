@@ -1,11 +1,11 @@
-package AssemblyParse.Commands.Memory;
+package Assembly.Commands.Memory;
 
-import AssemblyParse.AsmCommand;
-import AssemblyParse.AsmCommons;
+import Assembly.AsmCommand;
+import Assembly.AsmCommons;
 
-public class AddCommand extends AsmCommand {
-    public AddCommand(){
-        identifier = "add";
+public class SubCommand extends AsmCommand {
+    public SubCommand(){
+        identifier = "sub";
     }
     @Override
     public String parse(String[] sectors) {
@@ -18,8 +18,8 @@ public class AddCommand extends AsmCommand {
         //move the pointer to the specified address
         out.append(AsmCommons.movePointer(address));
 
-        //add value to address
-        out.append(AsmCommons.addVal(value));
+        //subtract value from address
+        out.append(AsmCommons.subVal(value));
 
         //move the pointer back to 0x0000
         out.append(AsmCommons.resetPointer(address));

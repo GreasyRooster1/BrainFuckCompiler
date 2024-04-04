@@ -1,4 +1,4 @@
-import AssemblyParse.AsmParser;
+import Assembly.AsmParser;
 
 public class Main {
     public static void main(String[] args) {

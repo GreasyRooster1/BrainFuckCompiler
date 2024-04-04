@@ -1,6 +1,6 @@
-package AssemblyParse.Commands.ControlFlow;
+package Assembly.Commands.ControlFlow;
 
-import AssemblyParse.AsmCommand;
+import Assembly.AsmCommand;
 
 public class NopCommand extends AsmCommand {
     public NopCommand(){identifier="nop";}

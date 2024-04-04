@@ -1,7 +1,7 @@
-package AssemblyParse.Commands.Memory;
+package Assembly.Commands.Memory;
 
-import AssemblyParse.AsmCommand;
-import AssemblyParse.AsmCommons;
+import Assembly.AsmCommand;
+import Assembly.AsmCommons;
 
 public class SbmCommand extends AsmCommand {
     public SbmCommand(){

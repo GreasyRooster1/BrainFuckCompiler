@@ -1,4 +1,4 @@
-package AssemblyParse;
+package Assembly;
 
 public abstract class AsmCommand {
     public String identifier;

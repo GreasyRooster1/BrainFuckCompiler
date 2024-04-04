@@ -1,6 +1,6 @@
-package AssemblyParse.Commands.IO;
+package Assembly.Commands.IO;
 
-import AssemblyParse.AsmCommand;
+import Assembly.AsmCommand;
 
 public class DbgCommand extends AsmCommand {
     public DbgCommand(){identifier="dbg";}
