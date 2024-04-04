@@ -13,7 +13,6 @@ public class Parser {
     public AsmCommand[] assemblyCommands = {};
 
     public Parser setup(){
-        //TODO:
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SetCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new PntCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new InpCommand());

@@ -43,6 +43,15 @@ public class AsmCommons {
     public static String moveValue(int address1,int address2) {
         StringBuilder out = new StringBuilder();
 
+        //move the pointer to address 2
+        out.append(AsmCommons.movePointer(address2));
+
+        //reset address 2
+        out.append("[-]");
+
+        //reset back to 0x0000
+        out.append(AsmCommons.resetPointer(address2));
+
         //move the pointer to address 1
         out.append(AsmCommons.movePointer(address1));
 
