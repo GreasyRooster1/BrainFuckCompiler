@@ -1,5 +1,6 @@
 package Assembly;
 
+import Assembly.Commands.Advanced.RawCommand;
 import Assembly.Commands.ControlFlow.*;
 import Assembly.Commands.IO.DbgCommand;
 import Assembly.Commands.IO.InpCommand;
@@ -16,6 +17,7 @@ public class AsmParser {
     public Optimizer optimizer;
 
     public AsmParser setup(){
+        //TODO: DYS DYF
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SetCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new PntCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new InpCommand());
@@ -33,6 +35,7 @@ public class AsmParser {
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new CpyCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SwpCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new MulCommand());
+        assemblyCommands = (AsmCommand[]) append(assemblyCommands,new RawCommand());
 
         optimizer = new Optimizer().setup();
         return this;
