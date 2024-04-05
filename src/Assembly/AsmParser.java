@@ -63,7 +63,7 @@ public class AsmParser {
                     .replaceAll("\\s+","")
                     .split("~");
             for (AsmCommand command:assemblyCommands) {
-                if(sectors[0].equals(command.identifier)){
+                if(sectors[0].toLowerCase().equals(command.identifier)){
                     String parsed = command.parse(sectors);
                     //System.out.println(parsed);
                     out = append(out,parsed);
