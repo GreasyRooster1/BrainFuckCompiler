@@ -1,4 +1,4 @@
-package Assembly.Commands.Memory;
+package Assembly.Commands.Math;
 
 import Assembly.AsmCommand;
 import Assembly.AsmCommons;

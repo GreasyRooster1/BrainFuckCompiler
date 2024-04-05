@@ -4,6 +4,10 @@ import Assembly.Commands.ControlFlow.*;
 import Assembly.Commands.IO.DbgCommand;
 import Assembly.Commands.IO.InpCommand;
 import Assembly.Commands.IO.PntCommand;
+import Assembly.Commands.Math.AddCommand;
+import Assembly.Commands.Math.AdmCommand;
+import Assembly.Commands.Math.SbmCommand;
+import Assembly.Commands.Math.SubCommand;
 import Assembly.Commands.Memory.*;
 import Assembly.Optimizations.Optimizer;
 
