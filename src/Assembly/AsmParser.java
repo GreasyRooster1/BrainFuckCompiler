@@ -4,10 +4,7 @@ import Assembly.Commands.ControlFlow.*;
 import Assembly.Commands.IO.DbgCommand;
 import Assembly.Commands.IO.InpCommand;
 import Assembly.Commands.IO.PntCommand;
-import Assembly.Commands.Math.AddCommand;
-import Assembly.Commands.Math.AdmCommand;
-import Assembly.Commands.Math.SbmCommand;
-import Assembly.Commands.Math.SubCommand;
+import Assembly.Commands.Math.*;
 import Assembly.Commands.Memory.*;
 import Assembly.Optimizations.Optimizer;
 
@@ -35,6 +32,7 @@ public class AsmParser {
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new NopCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new CpyCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SwpCommand());
+        assemblyCommands = (AsmCommand[]) append(assemblyCommands,new MulCommand());
 
         optimizer = new Optimizer().setup();
         return this;
