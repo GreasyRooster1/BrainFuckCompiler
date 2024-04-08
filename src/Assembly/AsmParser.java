@@ -62,15 +62,36 @@ public class AsmParser {
                     .replace(" ","~")
                     .replaceAll("\\s+","")
                     .split("~");
+
+            String[] flags = findFlags(sectors);
+            boolean hasFlags = flags.length>=1;
+
             for (AsmCommand command:assemblyCommands) {
                 if(sectors[0].toLowerCase().equals(command.identifier)){
-                    String parsed = command.parse(sectors);
-                    //System.out.println(parsed);
+                    String parsed;
+                    if(hasFlags){
+                        parsed = command.parseWithFlags(sectors,flags);
+                    }else{
+                        parsed = command.parse(sectors);
+                    }
                     out = append(out,parsed);
                 }
             }
         }
         return out;
+    }
+
+    public String[] findFlags(String[] sectors){
+        boolean hasFlags = false;
+        String[] flags = {};
+
+        for(String sector : sectors){
+            if(sector.startsWith("{")&&sector.endsWith("}")){
+                hasFlags = true;
+                flags = append(flags,sector);
+            }
+        }
+        return flags;
     }
 
     public String[] parseComments(String[] programLines) {
