@@ -1,0 +1,18 @@
+set 0x0002 32 {no-reset}
+set 0x0004 1 {no-reset}
+set 0x0005 48 {no-reset}
+set 0x0006 13 {no-reset}
+set 0x0001 65 {no-reset}
+
+jpt 0x0004
+    set 0x0003 26 {no-reset}
+    jpt 0x0003
+
+        pnt 0x0001 2
+        add 0x0001 1
+        sub 0x0003 1
+
+    jmp 0x0003
+    add 0x0005 1
+    sub 0x0001 26
+jmp 0x0004

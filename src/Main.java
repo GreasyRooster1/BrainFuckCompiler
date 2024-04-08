@@ -2,7 +2,7 @@ import Assembly.AsmParser;
 
 public class Main {
     public static void main(String[] args) {
-        String[] programLines = File.loadFile("programs/program.basm");
+        String[] programLines = File.loadFile("programs/alphabet-opt.basm");
 
         AsmParser asmParser = new AsmParser().setup();
 
