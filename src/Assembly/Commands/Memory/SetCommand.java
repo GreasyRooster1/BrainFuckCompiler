@@ -4,6 +4,8 @@ package Assembly.Commands.Memory;
 import Assembly.AsmCommand;
 import Assembly.AsmCommons;
 
+import java.util.Arrays;
+
 public class SetCommand extends AsmCommand {
     public SetCommand(){
         identifier = "set";
@@ -30,5 +32,16 @@ public class SetCommand extends AsmCommand {
         out.append(AsmCommons.resetPointer(hexAddress));
 
         return out.toString();
+    }
+
+    @Override
+    public String parseWithFlags(String[] sectors, String[] flags) {
+        String regular = this.parse(sectors);
+        if(!Arrays.asList(flags).contains("{no-reset}")){
+            return regular;
+            //return when there isn't the static flag
+        }
+        //remove the reset [-]
+        return regular.replace("[-]","");
     }
 }

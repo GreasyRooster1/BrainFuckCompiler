@@ -11,6 +11,6 @@ public abstract class AsmCommand {
         return null;
     }
     public String parseWithFlags(String[] sectors, String[] flags){
-        return null;
+        return this.parse(sectors);
     }
 }
