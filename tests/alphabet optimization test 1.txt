@@ -1,0 +1,78 @@
+--ALPHABET OPTIMIZATION TEST 1--
+
+alphabet-opt.basm:
+set 0x0002 32 {no-reset}
+set 0x0004 1 {no-reset}
+set 0x0005 48 {no-reset}
+set 0x0001 65 {no-reset}
+
+jpt 0x0004
+    set 0x0003 26 {no-reset}
+    jpt 0x0003
+        sub 0x0003 1
+        add 0x0001 1
+        pnt 0x0001 2
+
+    jmp 0x0003
+    add 0x0005 1
+    sub 0x0001 26
+jmp 0x0004
+
+alphabet-no-opt.basm:
+set 0x0002 32
+set 0x0004 1
+set 0x0005 48
+
+jpt 0x0004
+    set 0x0003 26
+    set 0x0001 65
+
+    jpt 0x0003
+
+        pnt 0x0001 2
+        add 0x0001 1
+        sub 0x0003 1
+
+    jmp 0x0003
+    add 0x0005 1
+jmp 0x0004
+
+optimized compiled with optLevel 3
+unoptimized compiled with optLevel 0
+other settings remain identical with:
+{
+  "optLevel" : 3,
+  "useFlags" : true,
+  "preserveComments" : false,
+  "preserveDocComments" : false,
+  "splitInstructions" : false,
+  "includeInstructions" : false
+}
+
+optimized output:
+>>++++++++++++++++++++++++++++++++>>+>++++++++++++++++++++++++++++++++++++++++++++++++>+++++++++++++<<<<<+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++>>>[<++++++++++++++++++++++++++[<<.>.<+>>-]>>+<<<<-------------------------->>>]<<<<
+254 bytes, 254 instructions (0%)
+
+unoptimized output:
+>>[-]++++++++++++++++++++++++++++++++<< >>>>[-]+<<<< >>>>>[-]++++++++++++++++++++++++++++++++++++++++++++++++<<<<< >>>>[<<<< >>>[-]++++++++++++++++++++++++++<<< >[-]+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++< >>>[<<< >.>.><<< >+< >>>-<<< >>>]<<< >>>>>+<<<<< >>>>]<<<<
+291 bytes, 278 instructions (~4.6%)
+
+-results-
+
+optimized:
+524 steps
+
+unoptimized:
+888 steps
+
+optimized was ~169.46% faster than unoptimized
+
+version info
+Commit 58,
+
+optimizer applied:
+PointerPhase
+WhitespacePhase
+
+assembly used:
+flags
