@@ -1,4 +1,4 @@
-package Assembly;
+package Assembly.Util;
 
 public class AsmCommons {
     public static String movePointer(int address){

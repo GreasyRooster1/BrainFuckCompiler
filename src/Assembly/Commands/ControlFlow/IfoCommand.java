@@ -1,7 +1,7 @@
 package Assembly.Commands.ControlFlow;
 
-import Assembly.AsmCommand;
-import Assembly.AsmCommons;
+import Assembly.Util.AsmCommand;
+import Assembly.Util.AsmCommons;
 
 public class IfoCommand extends AsmCommand {
     public IfoCommand(){

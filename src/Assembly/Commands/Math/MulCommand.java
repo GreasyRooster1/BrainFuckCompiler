@@ -1,7 +1,7 @@
 package Assembly.Commands.Math;
 
-import Assembly.AsmCommand;
-import Assembly.AsmCommons;
+import Assembly.Util.AsmCommand;
+import Assembly.Util.AsmCommons;
 
 public class MulCommand extends AsmCommand {
     public MulCommand(){

@@ -1,7 +1,7 @@
 package Assembly.Commands.Memory;
 
-import Assembly.AsmCommand;
-import Assembly.AsmCommons;
+import Assembly.Util.AsmCommand;
+import Assembly.Util.AsmCommons;
 
 public class MovCommand extends AsmCommand {
     public MovCommand(){

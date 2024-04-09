@@ -1,8 +1,7 @@
 package Assembly.Commands.Advanced;
 
-import Assembly.AsmCommand;
+import Assembly.Util.AsmCommand;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class RawCommand extends AsmCommand {

@@ -1,7 +1,7 @@
 package Assembly.Commands.IO;
 
-import Assembly.AsmCommand;
-import Assembly.AsmCommons;
+import Assembly.Util.AsmCommand;
+import Assembly.Util.AsmCommons;
 
 public class PntCommand extends AsmCommand {
     public PntCommand(){

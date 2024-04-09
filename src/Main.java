@@ -1,4 +1,4 @@
-import Assembly.AsmParseSettings;
+import Assembly.Util.AsmParseSettings;
 import Assembly.AsmParser;
 import Utils.File;
 

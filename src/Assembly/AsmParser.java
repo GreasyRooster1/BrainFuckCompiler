@@ -8,6 +8,8 @@ import Assembly.Commands.IO.PntCommand;
 import Assembly.Commands.Math.*;
 import Assembly.Commands.Memory.*;
 import Assembly.Optimizations.Optimizer;
+import Assembly.Util.AsmCommand;
+import Assembly.Util.AsmParseSettings;
 
 import static Utils.Utils.append;
 
