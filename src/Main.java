@@ -1,9 +1,11 @@
+import Assembly.Util.AsmCommandRegistry;
 import Assembly.Util.AsmParseSettings;
 import Assembly.AsmParser;
 import Utils.File;
 
 public class Main {
     public static void main(String[] args) {
+        AsmCommandRegistry.registerCommands();
         String[] programLines = File.loadFile("programs/alphabet-opt.basm");
 
         AsmParseSettings settings = new AsmParseSettings("programs/settings/asm-parse-settings.json");
