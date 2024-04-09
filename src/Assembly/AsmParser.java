@@ -15,9 +15,11 @@ public class AsmParser {
     public String[] lines;
     public AsmCommand[] assemblyCommands = {};
     public Optimizer optimizer;
+    public AsmParseSettings settings;
 
-    public AsmParser(){
-
+    public AsmParser(AsmParseSettings _settings){
+        settings = _settings;
+        setup();
     }
 
     public AsmParser setup(){

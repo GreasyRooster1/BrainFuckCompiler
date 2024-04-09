@@ -7,7 +7,7 @@ public class Main {
         String[] programLines = File.loadFile("programs/alphabet-opt.basm");
 
         AsmParseSettings settings = new AsmParseSettings("programs/settings/asm-parse-settings.json");
-        AsmParser asmParser = new AsmParser().setup();
+        AsmParser asmParser = new AsmParser(settings);
 
         asmParser.load(programLines);
 
