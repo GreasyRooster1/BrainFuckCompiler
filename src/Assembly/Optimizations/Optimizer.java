@@ -6,16 +6,14 @@ import Assembly.Optimizations.Phases.WhitespacePhase;
 import static Utils.Utils.append;
 
 public class Optimizer {
-    public int optLevel = 3;
-    public boolean includeComments = false;
-    public boolean includeCommandNames = false;
+    public int optLevel;
 
     public OptimizingPhase[] optimizations = {};
-    public Optimizer setup(){
+
+    public Optimizer(int _optLevel){
+        optLevel = _optLevel;
         optimizations = (OptimizingPhase[]) append(optimizations,new WhitespacePhase());
         optimizations = (OptimizingPhase[]) append(optimizations,new PointerPhase());
-
-        return this;
     }
 
     public String optimize(String program){

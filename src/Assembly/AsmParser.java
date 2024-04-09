@@ -43,7 +43,7 @@ public class AsmParser {
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new MulCommand());
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new RawCommand());
 
-        optimizer = new Optimizer().setup();
+        optimizer = new Optimizer(settings.optLevel);
         return this;
     }
     public void load(String[] _lines) {
