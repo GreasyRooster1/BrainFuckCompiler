@@ -1,7 +1,6 @@
 set 0x0002 32 {no-reset}
 set 0x0004 1 {no-reset}
 set 0x0005 48 {no-reset}
-set 0x0006 13 {no-reset}
 set 0x0001 65 {no-reset}
 
 jpt 0x0004
