@@ -1,6 +1,6 @@
 package Assembly.Commands.ControlFlow;
 
-import Assembly.Util.AsmCommand;
+import Assembly.AsmCommand;
 import Assembly.Util.AsmCommons;
 
 public class JmpCommand extends AsmCommand {

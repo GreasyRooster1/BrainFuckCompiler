@@ -1,6 +1,6 @@
 package Assembly.Commands.IO;
 
-import Assembly.Util.AsmCommand;
+import Assembly.AsmCommand;
 
 public class DbgCommand extends AsmCommand {
     public DbgCommand(){identifier="dbg";}

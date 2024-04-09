@@ -1,4 +1,4 @@
-package Assembly.Util;
+package Assembly;
 
 public abstract class AsmCommand {
     public String identifier;

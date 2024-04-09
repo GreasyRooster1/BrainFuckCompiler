@@ -1,6 +1,6 @@
 package Assembly.Commands.Advanced;
 
-import Assembly.Util.AsmCommand;
+import Assembly.AsmCommand;
 
 import java.util.Arrays;
 

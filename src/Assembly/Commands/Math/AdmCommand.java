@@ -1,6 +1,6 @@
 package Assembly.Commands.Math;
 
-import Assembly.Util.AsmCommand;
+import Assembly.AsmCommand;
 import Assembly.Util.AsmCommons;
 
 public class AdmCommand extends AsmCommand {
