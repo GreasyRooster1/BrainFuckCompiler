@@ -16,6 +16,10 @@ public class AsmParser {
     public AsmCommand[] assemblyCommands = {};
     public Optimizer optimizer;
 
+    public AsmParser(){
+
+    }
+
     public AsmParser setup(){
         //TODO: DYS DYF
         assemblyCommands = (AsmCommand[]) append(assemblyCommands,new SetCommand());

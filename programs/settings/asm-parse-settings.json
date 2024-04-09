@@ -1,0 +1,8 @@
+{
+  "optLevel" : 3,
+  "useFlags" : true,
+  "preserveComments" : false,
+  "preserveDocComments" : false,
+  "splitInstructions" : false,
+  "includeInstructions" : false
+}

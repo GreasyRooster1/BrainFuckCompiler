@@ -1,3 +1,5 @@
+package Utils;
+
 import Utils.Utils;
 
 import java.io.FileNotFoundException;
@@ -21,6 +23,22 @@ public class File {
             return null;
         }
         return out;
+    }
+    public static String loadAsString(String path){
+        StringBuilder out = new StringBuilder();
+        try {
+            java.io.File file = new java.io.File(path);
+            Scanner reader = new Scanner(file);
+            while (reader.hasNextLine()) {
+                out.append(reader.nextLine());
+            }
+            reader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+            return null;
+        }
+        return out.toString();
     }
 
 
